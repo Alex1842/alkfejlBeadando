@@ -1,4 +1,4 @@
 ﻿# Dokumentáció
 
 
-﻿# 1. Feladat vállalása
+﻿1. Feladat vállalása
