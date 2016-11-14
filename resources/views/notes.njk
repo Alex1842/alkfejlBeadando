@@ -1,0 +1,38 @@
+{% extends "layout" %}
+
+{% block content %}
+<div id="wrapper">
+    <div class="container">
+        {% if not currentUser %}
+        <div class="text-center"><h1>Please login to get started</h1></div>
+        {% else %}
+        <div class="row">
+            {% for note in notes %}
+                {% if note.user_id == currentUser.id %}
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading capitalize">{{ note.name }}</div>
+                                <!--<a href="/showNote/{{note.id}}">{{ note.name }}</a>-->
+                               <!--<span class="pull-right text-center"><a href="/deleteNote/{{note.id}}"><i class="fa fa-trash fa-lg" style="color:red"></i></a></span>-->
+                            <!--</div>-->
+                            <!-- List group -->
+                            <div class="panel-body" style="max-height:150px; min-height:150px; overflow-y: scroll;">
+                                {{ note.content }}
+                            </div>
+                            <div class="panel-footer">
+                                <!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">-->
+                                    <!--<div class="btn-group">-->
+                                        <a href="/deleteNote/{{note.id}}"><button type="submit" class="btn btn-danger"><i class="glyphicon glyphicon-trash" style="padding-right:10px"></i>Delete</button></a>
+                                        <a href="/editNote/{{note.id}}"><button type="button" class="btn btn-info pull-right text-center"><i class="glyphicon glyphicon-edit" style="padding-right:10px"></i>Edit</button></a>
+                                    <!--</div>-->
+                                <!--</div>-->
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
