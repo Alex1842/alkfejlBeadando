@@ -59,7 +59,7 @@ class RegisterOrAuthController {
         yield user.save()
 
         var registerMessage = {
-            success: 'Registration Successful! Now go ahead and login'
+            success: 'Successful registration!'
         }
 
         yield response.sendView('loginSignUp', { registerMessage : registerMessage })

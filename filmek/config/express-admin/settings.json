@@ -415,12 +415,12 @@
             "readonly": false
         }
     },
-    "categories": {
-        "slug": "categories",
+    "categorys": {
+        "slug": "categorys",
         "table": {
-            "name": "categories",
+            "name": "categorys",
             "pk": "id",
-            "verbose": "categories"
+            "verbose": "categorys"
         },
         "columns": [
             {

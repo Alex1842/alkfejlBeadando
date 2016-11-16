@@ -32,15 +32,15 @@ class HomeController {
         if (!isLoggedIn) {
             response.redirect('/loginSignUp')
         }
-        const categories = yield Category.all();
+        const categorys = yield Category.all();
 
-        for(let category of categories){
+        for(let category of categorys){
             const critics = yield category.critics().fetch();
             category.allCritics = critics.toJSON()
         }
 
         yield response.sendView('critics',{
-            categories: categories.toJSON()
+            categorys: categorys.toJSON()
         })
     }
 

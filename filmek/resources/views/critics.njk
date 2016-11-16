@@ -1,0 +1,119 @@
+{% extends "layout" %}
+
+{% block content%}
+<div id="wrapper">
+    <div class="container">
+        {% if not currentUser %}
+        <div class="text-center">
+			<h1>
+				First step: Login
+			</h1>
+		</div>
+        {% else %}
+        <div class="row">
+        {% for category in categorys %}
+			{% for critic in category.allCritics %}
+               <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4">
+                    <div class="panel panel-default">
+                       <center> 
+							<div class="panel-heading" >
+								<h2>
+									{{ critic.title }}
+								</h2>
+							</div>
+						</center>
+						<div class="panel-body" style="max-height:200px; min-height:150px; overflow-y: scroll;">
+							<ul style="list-style:none;" >
+								Genre: {{ category.name }}
+                                <span class="pull-right">
+									<a href="/editCritic/{{critic.id}}">
+									</a>
+								</span>
+							</ul>	
+							<div >
+                                <center>
+									<a href="/editCritic/{{critic.id}}" type="submit" class="btn btn-info">
+										<i class="glyphicon glyphicon-book style="padding-right:10px">
+										</i>
+										<b>
+											Read critic
+										</b>
+									</a>
+								</center>
+							</div>
+							{% if critic.user_id == currentUser.id %}
+							<div style="list-style:none;" align="bottom" >
+								<div align="right"></br>
+									<i style="opacity:.6">
+										This critic is added by you.      
+									</i>
+									<a href="/deleteCritic/{{critic.id}}">
+										<i class="glyphicon glyphicon-trash" >
+										</i>
+									</a>		
+								</div>
+							</div>	
+							{% endif %}
+						</div>
+                     </div>
+                 
+                   {#Hidden#}
+                    <div class="modal fade" id="addCritic" tabindex="-1" role="dialog" aria-labelledby="addCriticLabel">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">
+												&times;
+											</span>
+										</button>
+                                    <h4 class="modal-title" id="addCriticLabel">
+										Add new Critic
+									</h4>
+                                </div>
+								<form class="form-horizontal" role="form" method="POST" action="createCritic">
+								{{ csrfField }}
+									<div class="modal-body" style="min-height:150px; max-height:150px;">
+										<div class="form-group">
+											<label for="title" class="col-xs-3 control-label padding-bottom-5">
+												Critic title
+											</label>
+											<div class=" col-xs-6">
+												<input type="text" class="form-control" id="title" name="title" placeholder="Critic title" required>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="category_id" class="col-xs-3 control-label">
+												Category 
+												<i style="color:red">
+													*
+												</i>
+											</label>
+											<div class="col-xs-6">
+												<select class="form-control" id="category_id" name="category_id">
+												{% if category.user_id == currentUser.id %}
+													<option value="{{ category.id }}" selected>
+														{{ category.name}}
+													</option>
+												{% endif %}  
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button class="btn btn-success" type="submit" style="color:black">
+											Save
+										</button>
+									</div>
+								</form>
+							</div>
+                        </div>
+					</div>
+				</div>
+				{% endfor %}
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

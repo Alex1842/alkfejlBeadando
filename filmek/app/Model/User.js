@@ -14,7 +14,7 @@ class User extends Lucid {
   critics(){
     return this.hasMany('App/Model/Critic')
   }
-  categories(){
+  categorys(){
     return this.hasMany('App/Model/Category')
   }
   notes(){
