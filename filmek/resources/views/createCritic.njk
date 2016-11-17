@@ -18,30 +18,12 @@
             </div>
         </div>
         {% endif %}
-        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-2">
-           
-            <form class="form-horizontal" role="form" method="POST" action="/addCategory">
-                {{ csrfField }}
-                <fieldset>
-                    <div class="form-group">
-                        <label for="name" class="col-xs-3 control-label">Category</label></br></br></br>
-                        <div class="col-xs-10">
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Genre" value="{{old('name')}}" required>
-                            </div>
-							<span class="input-group-btn">
-                                    <button class="btn btn-default" type="submit">New category</button>
-                                </span>
-                        </div>
-                    </div>
-                </fieldset>
-            </form>
-        </div>
+        
         <div class="col-xs-10 col-sm-10 col-md-6 col-lg-2">
             <form class="form-horizontal" role="form" method="POST" action="/createCritic">
                 {{ csrfField }}
                 <fieldset>
-
+					<center>
                     <div class="form-group">
                     <label for="title"  class="col-xs-4 control-label">Movie Title <i style="color:red">*</i></label>
                         <div class="col-xs-6">
@@ -81,10 +63,32 @@
 							
 						</div>
                     </div>
-					</br></br></br></br></br>
+					
+					</center>
+                </fieldset>
+            </form>
+			<div class="">
+           
+            <form  role="form" method="POST" action="/addCategory">
+                {{ csrfField }}
+                <fieldset>
+                    <div class="form-group">
+                       
+                        <div class="">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Genre" value="{{old('name')}}" required>
+                            </div>
+							<span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">New category</button>
+                                </span>
+                        </div>
+                    </div>
                 </fieldset>
             </form>
         </div>
+		</br></br></br></br></br></br>
+        </div>
+		
         {% endif %}
         </div>
     </div>
