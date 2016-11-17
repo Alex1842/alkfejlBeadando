@@ -8,6 +8,14 @@ margin: 0 9px;
 border-left: 1px solid #f2f2f2;
 border-right: 1px solid #ffffff;
 }
+.vr {
+    width:10px;
+    background-color:#000;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:150px;
+}
 </style> 
 <div id="wrapper">
     <div class="container">
@@ -44,6 +52,7 @@ border-right: 1px solid #ffffff;
                 </div>
 				</center>
 				</br>
+                <hr>
                 <hr style="border: 1px solid grey; margin-left:15px; margin-right:15px;" class="visible-xs"/>
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                     <legend style="border:none">Sign Up</legend>
@@ -71,7 +80,7 @@ border-right: 1px solid #ffffff;
                                 <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
                                     <input type="password" class="form-control" id="inputPassword"
                                            placeholder="Use upper-, lowercase, number, and special characters." 
-                                           name="inputPassword" pattern="^(?=.*[0-9])(?=.*[!@#$%^&*_])[\w!@#$%^&*_]{6,16}$" title="Special characters can be: !@#$%^&*_" required>
+                                           name="inputPassword" pattern="^(?=.*[0-9])(?=.*[!@#$%^&*_])[\w!@#$%^&*_]{6,16}$" title="Special characters: !@#$%^&*_" required>
                                     <i class="glyphicon glyphicon-lock form-control-feedback" style="text-align:left;"></i>
                                 </div>
                             </div>
