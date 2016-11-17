@@ -54,10 +54,10 @@
                         <div class="col-xs-6">
                             <select class="form-control" id="category_id" name="category_id" required>
                             {% for category in categories %}
-                                {% if category.user_id == currentUser.id %}
+                                {#{% if category.user_id == currentUser.id %}#}
                                 <option value="{{ category.id }}" {% if category.id == old('category_id') %} selected {% endif %} >
                                     {{ category.name}}</option>
-                                {% endif %}  
+                                {#{% endif %} #} 
                             {% endfor %}
                             </select>
                         </div>

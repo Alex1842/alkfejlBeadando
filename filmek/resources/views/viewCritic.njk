@@ -1,0 +1,68 @@
+{% extends "layout"%}
+{% block content %}
+<style> 
+#rcorners3 {
+     border-radius: 50px 50px 50px 50px;
+    background:  	#696969;
+    padding: 20px; 
+    width: 1000px;
+       
+}
+.grey, .grey a {
+  color: #aaa;
+}
+</style>
+<div id="wrapper">
+    <div class="container">
+    {% if not currentUser %}
+      <p class="text-center"><h1>Please login to get started</h1></p>
+      {% else %}
+        <h1><b> {{ critic.title }}</b>
+		{% if critic.user_id == currentUser.id %}
+		<a href="/editCritic/{{critic.id}}"><i class="glyphicon glyphicon-pencil grey" style="padding-left:20px"></i></a></h1>
+		{% endif %}
+		<h4><i>{{ critic.category.name }}</i></h4>
+        {#{% if critic.user_id == currentUser.id %}#}
+        
+        <div class="col-xs-12">
+            <form class="form-horizontal" role="form" method="POST" action="">
+                {{ csrfField }}
+                <fieldset>
+                   
+
+                    <div class="form-group">
+                    
+                      
+							<center>
+                        
+                            <div class="panel-body" id="rcorners3" align="left"><font size="3" color="white">{{ critic.description }}</font>
+							
+							</div>
+                       </center>
+                           <!-- <input type="text" class="form-control" id="title" name="title" placeholder="Critic title" value="{{ critic.description }}">-->
+                    
+
+                      
+                    </div>
+                    <div class="form-group">
+
+
+                    <div class="form-group">
+                        <center>
+                            <a href="/critics" type="Back" class="btn btn-default">Back to the other critics</a>
+                          </center>
+                       
+                    </div>
+
+
+
+                </fieldset>
+            </form>
+        </div>
+        {#{% else %}#}
+        {#<div class="text-center"><h3>No matching critic found</h1></div>#}
+        {#{% endif %}#}
+        {% endif %}
+        </div>
+        </div>
+{% endblock %}

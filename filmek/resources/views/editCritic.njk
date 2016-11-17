@@ -1,28 +1,11 @@
 {% extends "layout"%}
 {% block content %}
 <style> 
-#rcorners1 {
-    border-radius: 25px;
-    background: #73AD21;
-    padding: 20px; 
-    width: 200px;
-    height: 150px;    
-}
-
-#rcorners2 {
-    border-radius: 25px;
-    border: 2px solid #73AD21;
-    padding: 20px; 
-    width: 200px;
-    height: 150px;    
-}
-
 #rcorners3 {
-     border-radius: 50px 50px 50px 50px;
-    background:  	#696969;
+    border-radius: 50px 50px 50px 50px;
+    background:  	#DCDCDC;
     padding: 20px; 
-    width: 1000px;
-       
+    width: 1000px;    
 }
 </style>
 <div id="wrapper">
@@ -30,6 +13,7 @@
     {% if not currentUser %}
       <p class="text-center"><h1>Please login to get started</h1></p>
       {% else %}
+	  {% if critic.user_id == currentUser.id %}
         <h1><b> {{ critic.title }}</b></h1>
 		<h4><i>{{ critic.category.name }}</i></h4>
         {#{% if critic.user_id == currentUser.id %}#}
@@ -38,14 +22,18 @@
             <form class="form-horizontal" role="form" method="POST" action="">
                 {{ csrfField }}
                 <fieldset>
-                   
+               
 
                     <div class="form-group">
                     
                         <div class="col-xs-6">
 
                         
-                            <div class="panel-body" id="rcorners3"><font size="3" color="white">{{ critic.description }}</font></div>
+                            <textarea class="panel-body" id="rcorners3"  rows="15" cols="90" id="description" name="description">
+								{{ critic.description }}
+								
+							</textarea>
+
                        
                            <!-- <input type="text" class="form-control" id="title" name="title" placeholder="Critic title" value="{{ critic.description }}">-->
                     
@@ -57,14 +45,23 @@
 
                     <div class="form-group">
                         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
-                            <a href="/critics" type="Back" class="btn btn-default">Back to the other critics</a>
-                            {% if critic.user_id == currentUser.id %}
-                                 <a href="/deleteCritic/{{critic.id}}" class="btn btn-danger">Delete critic</a>
-                            
-                            {% endif %}
+                            <button type="submit" class="btn-lg btn-success">Save critic <span class=" glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+                            <a href="/deleteCritic/{{critic.id}}" class="btn btn-danger col-lg-offset-6">
+							Delete critic <span class=" glyphicon glyphicon-remove" aria-hidden="true"></span></a>
                         </div>
+						
+						
                     </div>
-
+					 <div class="form-group">
+                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
+                            {% if critic.user_id == currentUser.id %}
+                             
+                            {% endif %}
+                            
+                        </div>
+						
+                    </div>
+					
 
 
                 </fieldset>
@@ -73,7 +70,12 @@
         {#{% else %}#}
         {#<div class="text-center"><h3>No matching critic found</h1></div>#}
         {#{% endif %}#}
+		{% else %}
+		<div class="text-center"><h3>You are not allowed to edit this critic!</h1></div>
+		 <center><a href="/critics" type="Back" class="btn btn-default"><i class="glyphicon glyphicon-arrow-left" style="padding-right:20px"></i>Go back to the other critics</a></center>
         {% endif %}
+			
+		{% endif %}
         </div>
         </div>
 {% endblock %}

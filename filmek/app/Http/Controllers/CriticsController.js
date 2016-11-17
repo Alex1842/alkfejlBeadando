@@ -32,8 +32,8 @@ class CriticsController {
             description: 'required'
         };
         const validation = yield Validator.validateAll(criticData, rules);
-
         if (validation.fails()) {
+            console.log('doCreate -->FAIL');
             yield request
                 .withAll()
                 .andWith({ errors: validation.messages() })
@@ -52,8 +52,8 @@ class CriticsController {
             name: 'required'
         }
         const validation = yield Validator.validateAll(categoryData, rules);
-
         if (validation.fails()) {
+            console.log('addCategory -->FAIL');
             yield request
                 .withAll()
                 .andWith({ errors: validation.messages() })
@@ -66,10 +66,48 @@ class CriticsController {
         response.redirect('/createCritic');
     }
 
+    * view(request, response) {
+        console.log('view');
+        const categories = yield Category.all()
+        const id = request.param('id');
+        const critic = yield Critic.find(id);
+        yield critic.related('category').load();
+        yield response.sendView('viewCritic', {
+            critic: critic.toJSON(),
+            categories: categories.toJSON()
+        })
+    }
+
+    * doView(request, response) {
+        console.log('doview');
+        const criticData = request.except('_csrf');
+        const rules = {
+            title: 'required',
+            category_id: 'required',
+            description: 'required'
+        };
+        const validation = yield Validator.validateAll(criticData, rules);
+        if (validation.fails()) {
+            console.log('doView -->FAIL');
+            yield request
+                .withAll()
+                .andWith({ errors: validation.messages() })
+                .flash()
+            response.redirect('back');
+            return
+        }
+        const id = request.param('id');
+        const critic = yield Critic.find(id);
+        critic.title = request.input('title');
+        critic.category_id = request.input('category_id');
+        critic.description = request.input('description');
+        yield critic.save();
+        response.redirect('/critics');
+    }
+
+
     * edit(request, response) {
-
         console.log('edit');
-
         const categories = yield Category.all()
         const id = request.param('id');
         const critic = yield Critic.find(id);
@@ -83,14 +121,13 @@ class CriticsController {
     * doEdit(request, response) {
         console.log('doedit');
         const criticData = request.except('_csrf');
-
         const rules = {
-            title: 'required',
-            category_id: 'required'
+            description: 'required'
         };
         const validation = yield Validator.validateAll(criticData, rules);
-
         if (validation.fails()) {
+            console.log('doEdit -->FAIL');
+            response.send({error: validation.messages()})
             yield request
                 .withAll()
                 .andWith({ errors: validation.messages() })
@@ -98,13 +135,11 @@ class CriticsController {
             response.redirect('back');
             return
         }
-
         const id = request.param('id');
-        const critic = yield Critic.find(id);
-        critic.title = request.input('title');
-        critic.category_id = request.input('category_id');
+        const critic = yield Critic.find(id);      
+        critic.description = request.input('description');
         yield critic.save();
-        response.redirect('/critics');
+        response.redirect('/viewCritic/'+request.param('id'));
     }
 
     * delete(request, response) {
@@ -119,14 +154,8 @@ class CriticsController {
         const id = request.param('id');
         const category = yield Category.find(id);
         const critics = yield category.critics().fetch();
-
-        // for(var i=critics.length; i = 0 ; --i){
-        //     critics.splice(i,1);
-        // }
-
-        // yield category.delete(critics);
         yield category.delete();
-        // console.log(critics.length);
+    
         response.redirect('/critics');
     }
 
