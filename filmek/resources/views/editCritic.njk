@@ -1,56 +1,52 @@
 {% extends "layout"%}
 {% block content %}
+<style> 
+#rcorners1 {
+    border-radius: 25px;
+    background: #73AD21;
+    padding: 20px; 
+    width: 200px;
+    height: 150px;    
+}
+
+#rcorners2 {
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 20px; 
+    width: 200px;
+    height: 150px;    
+}
+
+#rcorners3 {
+     border-radius: 50px 50px 50px 50px;
+    background:  	#696969;
+    padding: 20px; 
+    width: 1000px;
+       
+}
+</style>
 <div id="wrapper">
     <div class="container">
-        {% if not currentUser %}
-        <div class="text-center"><h1>Please login to get started</h1></div>
-        {% else %}
-        <h2> Edit Critic </h2>
+    {% if not currentUser %}
+      <p class="text-center"><h1>Please login to get started</h1></p>
+      {% else %}
+        <h1><b> {{ critic.title }}</b></h1>
+		<h4><i>{{ critic.category.name }}</i></h4>
         {#{% if critic.user_id == currentUser.id %}#}
         
         <div class="col-xs-12">
             <form class="form-horizontal" role="form" method="POST" action="">
                 {{ csrfField }}
                 <fieldset>
+                   
 
                     <div class="form-group">
-                    <label for="title"  class="col-xs-3 control-label">Movie Title</label>
-                        <div class="col-xs-6">
-                            <input type="text" class="form-control" id="title" name="title" placeholder="Critic title" value="{{ critic.title }}">
-                        </div>
-                    </div>
-
-
-                    <div class="form-group">
-                    <label for="title"  class="col-xs-3 control-label">Category</label>
-                        <div class="col-xs-6">
-                            <p type="text" class="form-control" id="title" name="title" placeholder="Critic title" value="{{ critic.category.name }}">{{ critic.category.name }}</p>
-                        </div>
-                    </div>
-
-
-                    <div class="form-group">
-                    <label for="category_id" class="col-xs-3 control-label">Category</label>
-                        <div class="col-xs-6">
-                            <select class="form-control" id="category_id" name="category_id">
-                            {% for category in categories %}
-                                <!--{% if critic.category.user_id == currentUser.id %}-->
-                                <option value="{{ category.id }}" 
-                                {% if category.id == old('category_id') %} selected {% endif %}>
-                                    {{ category.name }}</option>
-                                <!--{% endif %}  -->
-                            {% endfor %}
-                            </select>
-                        </div>
-                    </div> 
-
-                    <div class="form-group">
-                    <label for="title"  class="col-xs-3 control-label">Critic</label>
+                    
                         <div class="col-xs-6">
 
-                        <div class="panel panel-default">
-                            <div class="panel-body">{{ critic.description }}</div>
-                        </div>
+                        
+                            <div class="panel-body" id="rcorners3"><font size="3" color="white">{{ critic.description }}</font></div>
+                       
                            <!-- <input type="text" class="form-control" id="title" name="title" placeholder="Critic title" value="{{ critic.description }}">-->
                     
 
