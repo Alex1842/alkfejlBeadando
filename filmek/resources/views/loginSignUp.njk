@@ -16,92 +16,12 @@ border-right: 1px solid #ffffff;
     bottom:0;
     left:150px;
 }
+
 </style> 
 <div id="wrapper">
     <div class="container">
         <div class="panel panel-default">
-            <div class="panel-heading">Login / Sign Up</div>
-            <div class="panel-body">
-                <center>
-				<div>
-                    <legend style="border:none">Login</legend>
-                    <form role="form" method="POST" action="/login">
-                    {{ csrfField }}
-                        <fieldset>
-                            <div class="form-group">
-                                <label for="username">Username</label>
-                                <div>
-                                    <input type="text" class="input-field" id="username" placeholder="Username" name="username" required>
-                                    <i class="glyphicon glyphicon-user form-control-feedback" style="text-align:left;"></i>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <div>
-                                    <input type="password" id="password" placeholder="Password" name="password" required>
-                                    <i class="glyphicon glyphicon-lock form-control-feedback" style="text-align:left;"></i>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div>
-                                    <button type="submit" class="btn btn-info"><i class="fa fa-btn fa-sign-in" style="padding-right:10px"></i>Login</button>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>
-				</center>
-				</br>
-                <hr>
-                <hr style="border: 1px solid grey; margin-left:15px; margin-right:15px;" class="visible-xs"/>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <legend style="border:none">Sign Up</legend>
-                    <form class="form-horizontal" role="form" method="POST" action="/register">
-                        
-                        {{ csrfField}}
-                        
-                        <div class="form-group">
-                            <label for="inputUsername" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 control-label">Username</label>
-                            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-                                <input type="text" class="form-control" id="inputUsername" placeholder="Username" name="inputUsername" required>
-                                <i class="glyphicon glyphicon-user form-control-feedback" style="text-align:left;"></i>
-                            </div>
-                        </div>
-						
-                        <div class="form-group">
-                            <label for="inputEmail" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 control-label">Email</label>
-                            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-                                <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="inputEmail" required>
-                                <i class="glyphicon glyphicon-envelope form-control-feedback" style="text-align:left;"></i>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                                <label for="inputPassword" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 control-label">Password</label>
-                                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-                                    <input type="password" class="form-control" id="inputPassword"
-                                           placeholder="Use upper-, lowercase, number, and special characters." 
-                                           name="inputPassword" pattern="^(?=.*[0-9])(?=.*[!@#$%^&*_])[\w!@#$%^&*_]{6,16}$" title="Special characters: !@#$%^&*_" required>
-                                    <i class="glyphicon glyphicon-lock form-control-feedback" style="text-align:left;"></i>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputConfirmPassword" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 control-label">Confirm Password</label>
-                                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-                                    <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Password again" name="inputConfirmPassword" 
-                                            pattern="^(?=.*[0-9])(?=.*[!@#$%^&*_])[\w!@#$%^&*_]{6,16}$" required>
-                                    <i class="glyphicon glyphicon-lock form-control-feedback" style="text-align:left;"></i>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
-                                    <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-log-in style="padding-right:20px"></i>    Sign Up</button>
-                                </div>
-                            </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="text-center" style="color:green"><h3>{{registerMessage.success}}</h3></div>
+		<div class="text-center" style="color:green"><h3>{{registerMessage.success}}</h3></div>
         <div class="text-center" style="color:darkred;font-weight:bold"><h3>{{error}}</h3></div>
         {% if old('errors') %}
             <ul class="text-center">
@@ -111,5 +31,90 @@ border-right: 1px solid #ffffff;
             </ul>
         {% endif %}
     </div>
+            <div class="panel-body">
+                <center>
+				<div>
+                    <legend style="border:none"><font color="black"><b>Login</b></font></legend></br>
+                    <form role="form" class="form-inline" method="POST" action="/login">
+                    {{ csrfField }}
+                        <fieldset>
+						
+                            <div class="form-group">
+                                <div>	
+									<label for="username">Username:
+									</label>
+                                
+										<input type="text" class="form-control" id="username" placeholder="Enter username" name="username" required>
+										<i class="glyphicon glyphicon-user form-control-feedback" style="text-align:left;"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+							<div>                               
+							   <label for="password" style="padding-left:30px">Password:</label>
+                               
+                                    <input type="password" class="form-control" id="password"  placeholder="Enter password" name="password" required>
+                                    <i class="glyphicon glyphicon-lock form-control-feedback" style="text-align:left;"></i>
+                                </div>
+                            </div>
+							<div class="checkbox" style="padding-left:50px">
+							<label><input type="checkbox"> Remember me</label>
+							</div>
+                            <div>
+                               
+									</br></br>
+                                    <button type="submit" class="btn btn-info"><i class="fa fa-btn fa-sign-in" style="padding-right:10px"></i>Login</button>
+                               
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+				</center>
+				</br>
+				</br>
+                <hr>
+				</br>
+                </hr style="border: 1px solid grey; margin-left:15px; margin-right:15px;" class="visible-xs"/>
+
+			<center>
+				
+			</center>
+
+
+					<center>
+                    <legend style="border:none"><font color="black"><b>Sign Up</b></font></legend></br>
+                    <form class="form-inline" role="form" method="POST" action="/register">
+                        {{ csrfField}}
+                       <form class="form-inline">
+					<div class="form-group">
+						<label for="inputUsername">Username:</label>
+						<input type="text" class="form-control" id="inputUsername" placeholder="Enter username" name="inputUsername" required>
+						<i class="glyphicon glyphicon-user form-control-feedback" style="text-align:left;"></i>
+					</div>
+					<div class="form-group" style="padding-left:20px">
+						<label for="inputEmail">Email:</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Enter email" name="inputEmail" required>
+                        <i class="glyphicon glyphicon-envelope form-control-feedback" style="text-align:left;"></i>
+					</div>
+					<div class="form-group" style="padding-left:20px">
+						<label for="inputPassword">Password:</label>
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Enter password" name="inputPassword" pattern="^(?=.*[0-9])(?=.*[!@#$%^&*_])[\w!@#$%^&*_]{6,16}$" title="Special characters: !@#$%^&*_" required>
+                        <i class="glyphicon glyphicon-lock form-control-feedback" style="text-align:left;"></i>
+					</div>
+					<div class="form-group" style="padding-left:20px">
+						<label for="inputConfirmPassword">Password Again:</label>
+						<input type="password" class="form-control" id="inputConfirmPassword" placeholder="Enter password again" name="inputConfirmPassword" pattern="^(?=.*[0-9])(?=.*[!@#$%^&*_])[\w!@#$%^&*_]{6,16}$" required>
+                        <i class="glyphicon glyphicon-lock form-control-feedback" style="text-align:left;"></i>
+					</div>
+					<div>
+						</br></br>
+						<button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-log-in"  style="padding-right:10px"></i>Sign Up
+						</button>
+					</div>
+				</form>
+                    </form>
+                </div>
+            </center>
+        </div>
+        
 </div>
 {% endblock %}
