@@ -10,6 +10,37 @@
 			</h1>
 		</div>
         {% else %}
+		<form action="/critics" method="GET">
+<!-- <div class="row">
+<div class="col-md-4">
+<div class="form-group">
+<label for="inputRecipeName">Title</label>
+<input type="text" class="form-control" placeholder="Movie Title" id="movieTitle" name="movieTitle" value="{{ critic.title }}">
+</div>
+</div>
+<div class="col-md-4">
+<div class="form-group">
+<label for="inputCategory">Category</label>
+<select class="form-control" id="inputCategory" name="category">
+<option value="">--</option>
+{% for category in categorys %}
+{% if filters.category == category.id %}
+<option value="{{ category.id }}" selected>{{ category.name }}</option>
+{% else %}
+<option value="{{ category.id }}">{{ category.name }}</option>
+{% endif %}
+{% endfor %}
+</select>
+</div>
+</div>
+<div class="col-md-4">
+<div class="form-group">
+<label>&nbsp;</label>
+<button class="btn btn-block btn-primary" type="submit">Szűrés</button>
+</div>
+</div>
+</div>
+</form>-->
         <div class="row">
         {% for category in categorys %}
 			{% for critic in category.allCritics %}

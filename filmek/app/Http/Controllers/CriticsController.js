@@ -183,6 +183,29 @@ class CriticsController {
         yield category.save();
         response.redirect('/critics');
     }
+
+    * search (request, response) {
+const page = Math.max(1, request.input('p'))
+const filters = {
+critic: request.input('critic') || '',
+category: request.input('category') || 0
+
+}
+const recipes = yield Critic.query()
+.where(function () {
+if (filters.category > 0) this.where('category_id', filters.category)
+if (filters.critic.length > 0) this.where('critic', 'LIKE', `%${filters.name}%`)
+})
+.with('user')
+.paginate(page, 9)
+const categories = yield Category.all()
+const users = yield User.all()
+yield response.sendView('criticSearch', {
+critic: critic.toJSON(),
+categories: categories.toJSON(),
+filters
+})
+}
 }
 
 module.exports = CriticsController

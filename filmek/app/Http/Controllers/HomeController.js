@@ -1,6 +1,6 @@
 'use strict'
 const Database = use('Database')
-const Note = use('App/Model/Note')
+//const Note = use('App/Model/Note')
 const Critic = use('App/Model/Critic')
 const Category = use('App/Model/Category')
 const User = use('App/Model/User')
