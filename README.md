@@ -4,7 +4,7 @@ Készítette: Akopjan Alex
 
 ###1.	Követelményanalízis
 #####1.1.	Célkitűzés, projektindító dokumentum
-A program legfőbb célja jól átláthatóan, és érthetően megjeleníteni az adott filmek adatait, leírását és a hozzájuk tartozó filmkritikát egy webes vastagkliens, azaz egyoldali alkalmazás felhasználásával. Az adatok védelme érdekében legyen lehetőség regisztrációra, majd bejelentkezésre. Bejelentkezett felhasználó a filmek listáját megtekintheti, filmkritikákkal bővítheti, meglévő elemeket törölhet, valamit megjegyzéseket írhat. 
+A program legfőbb célja jól átláthatóan, és érthetően megjeleníteni az adott filmekhez tartozó filmkritikát egy webes vastagkliens, azaz egyoldali alkalmazás felhasználásával. Az adatok védelme érdekében legyen lehetőség regisztrációra, majd bejelentkezésre. Bejelentkezett felhasználó a filmek listáját megtekintheti, filmkritikákkal bővítheti, meglévő elemeket törölhet. 
 
 ######Funkcionális követelmények:
 * Regisztrációra
@@ -13,7 +13,6 @@ A program legfőbb célja jól átláthatóan, és érthetően megjeleníteni az
   - új kritika írása a listába*
   - a meglévő kritikák szerkesztésére
   - a meglévő kritikák törlésére
-  - komment írása
 
 ######Nem funkcionális követelmények:
 *	**Könnyű áttekinthetőség:** Színekkel műfaj szerint csoportosítás
@@ -36,8 +35,7 @@ A program legfőbb célja jól átláthatóan, és érthetően megjeleníteni az
 **Vendég**: Csak a publikus oldalakat éri el
 
 *	Főoldal
-*	Bejelentkezés
-*	Regisztráció
+*	Bejelentkezés/ Regisztráció
 
 **Bejelentkezett felhasználó**: A publikus oldalak elérésén felül egyéb funkciókhoz is hozzáfér.
 
@@ -45,7 +43,6 @@ A program legfőbb célja jól átláthatóan, és érthetően megjeleníteni az
 *	Meglévő filmkritika megtekintése
 *	Meglévő filmkritikaszerkesztése
 *	Meglévő filmkritika törlése
-*	Komment írása
 
 
 
@@ -54,10 +51,10 @@ Vegyünk példának egy egyszerű folyamatot:
 **Meglévő filmkritika szerkesztése:**
 
 1.	A felhasználó az oldalra érkezve, bejelentkezik vagy regisztrál
-2.	Regisztráció után megtekintheti a filmkritikákat kilistázó oldalt, ahol kiválaszthatja a szerkeszteni kívánt filmkritikát.
-3.	Megnyomja a „Megtekintés” feliratú gombot
-4.	A megtekintés oldalon kiválaszthatja a „Szerkesztés” gombot
+2.	Bejelentkezés után megtekintheti a filmkritikákat kilistázó oldalt, ahol kiválaszthatja filmkritikát.
+3.	Megnyomja a „Read Critic” feliratú gombot
+4.	A megtekintés oldalon elolvashatja a filmkritikát, és amennyiben ő adta hozzá szerkesztheti a ceruza ikonnal jelzett gombra kattintva.
 5.	Szerkesztés oldalon felviszi az új adatokat
-6.	Submit gombra kattintva elmenti a változásokat
+6.	Save critic gombra kattintva elmenti a változásokat vagy a Delete critic gombbal törölheti
 
-
+![alt tag](kepek/nomnoml.png)
