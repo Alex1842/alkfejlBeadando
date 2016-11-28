@@ -57,7 +57,7 @@ Vegyünk példának egy egyszerű folyamatot:
 5.	Szerkesztés oldalon felviszi az új adatokat
 6.	Save critic gombra kattintva elmenti a változásokat vagy a Delete critic gombbal törölheti
 
-![](kepek/nomnoml.png)
+![](kepek/komp.png)
 
 
 ###2.	Tervezés
@@ -66,7 +66,7 @@ Vegyünk példának egy egyszerű folyamatot:
 
 ######2.1.1. Komponensdiagram
 
-![](kepek/komp.png)
+![](kepek/nomnoml (1).png)
 
 ######2.1.2. Oldaltérkép:
 
