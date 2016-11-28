@@ -112,7 +112,7 @@ Vegyünk példának egy egyszerű folyamatot:
 **Bejelentkezés**
 ![](kepek/site3.PNG)
 
-**Főoldal **
+**Főoldal**
 ![](kepek/site4.PNG)
 
 **Új Kritika**
