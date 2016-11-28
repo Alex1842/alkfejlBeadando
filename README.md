@@ -117,5 +117,15 @@ Vegyünk példának egy egyszerű folyamatot:
 **Bejelentkezés/Regisztrálás**
 ![](kepek/site5.PNG)
 
+**Bejelentkezés/Regisztrálás**
+![](kepek/site6.PNG)
 
+**Bejelentkezés/Regisztrálás**
+![](kepek/site7.PNG)
+
+**Bejelentkezés/Regisztrálás**
+![](kepek/site8.PNG)
+
+**Bejelentkezés/Regisztrálás**
+![](kepek/site9.PNG)
 
