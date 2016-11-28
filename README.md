@@ -57,4 +57,4 @@ Vegyünk példának egy egyszerű folyamatot:
 5.	Szerkesztés oldalon felviszi az új adatokat
 6.	Save critic gombra kattintva elmenti a változásokat vagy a Delete critic gombbal törölheti
 
-![alt tag](/kepek/nomnoml.png)
+![alt tag](https://github.com/Alex1842/alkfejlBeadando/kepek/nomnoml.png)
