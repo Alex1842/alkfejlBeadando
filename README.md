@@ -58,3 +58,4 @@ Vegyünk példának egy egyszerű folyamatot:
 6.	Save critic gombra kattintva elmenti a változásokat vagy a Delete critic gombbal törölheti
 
 ![alt tag](https://github.com/Alex1842/alkfejlBeadando/kepek/nomnoml.png)
+![](kepek/nomnoml.png)
