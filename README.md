@@ -102,30 +102,34 @@ Vegyünk példának egy egyszerű folyamatot:
 #####2.2. Felhasználói-felület modell
 
 ######2.2.1.Oldalvázlatok:
+
 **Bejelentkezés/Regisztrálás**
 ![](kepek/site1.PNG)
 
-**Bejelentkezés/Regisztrálás**
+**Regisztrálás**
 ![](kepek/site2.PNG)
 
-**Bejelentkezés/Regisztrálás**
+**Bejelentkezés**
 ![](kepek/site3.PNG)
 
-**Bejelentkezés/Regisztrálás**
+**Főoldal **
 ![](kepek/site4.PNG)
 
-**Bejelentkezés/Regisztrálás**
+**Új Kritika**
 ![](kepek/site5.PNG)
 
-**Bejelentkezés/Regisztrálás**
+**Kritika lista**
 ![](kepek/site6.PNG)
 
-**Bejelentkezés/Regisztrálás**
+**Kritika megtekintése**
 ![](kepek/site7.PNG)
-
-**Bejelentkezés/Regisztrálás**
+.
+.
+.
 ![](kepek/site8.PNG)
 
-**Bejelentkezés/Regisztrálás**
+**Kritika szekesztése**
 ![](kepek/site9.PNG)
+
+
 
