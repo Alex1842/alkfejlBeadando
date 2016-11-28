@@ -103,19 +103,19 @@ Vegyünk példának egy egyszerű folyamatot:
 
 ######2.2.1.Oldalvázlatok:
 **Bejelentkezés/Regisztrálás**
-![](kepek/Képkivágás.png)
+![](kepek/site1.PNG)
 
 **Bejelentkezés/Regisztrálás**
-![](kepek/Képkivágás2.png)
+![](kepek/site2.PNG)
 
 **Bejelentkezés/Regisztrálás**
-![](kepek/Képkivágás3.png)
+![](kepek/site3.PNG)
 
 **Bejelentkezés/Regisztrálás**
-![](kepek/Képkivágás4.png)
+![](kepek/site4.PNG)
 
 **Bejelentkezés/Regisztrálás**
-![](kepek/Képkivágás5.png)
+![](kepek/site5.PNG)
 
 
 
