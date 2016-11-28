@@ -93,11 +93,11 @@ Vegyünk példának egy egyszerű folyamatot:
 * GET/createCritic: új kritka felvétele
 * POST/addCategory: új kategória felvétele
 * POST/createCritic: új kritka felvételéhez szükséges adatok felküldése
-* GET/vieWCritic/:id: kritika adatok
-* POST/vieWCritic/:id: kritika adatok kilistázása
-* GET/editCritic/:id: kritika módosítása
-* POST/editCritic/:id: kritika módosítása, adatok felküldése
-* GET/deleteCritic/:id kritika törlése
+* GET/vieWCritic/:id : kritika adatok
+* POST/vieWCritic/:id : kritika adatok kilistázása
+* GET/editCritic/:id : kritika módosítása
+* POST/editCritic/:id : kritika módosítása, adatok felküldése
+* GET/deleteCritic/:id : kritika törlése
 
 #####2.2. Felhasználói-felület modell
 
