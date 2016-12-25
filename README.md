@@ -57,7 +57,7 @@ Vegyünk példának egy egyszerű folyamatot:
 5.	Szerkesztés oldalon felviszi az új adatokat
 6.	Save critic gombra kattintva elmenti a változásokat vagy a Delete critic gombbal törölheti
 
-![](kepek/nomnoml.png)
+![](kepek/komp.png)
 
 
 ###2.	Tervezés
@@ -66,7 +66,7 @@ Vegyünk példának egy egyszerű folyamatot:
 
 ######2.1.1. Komponensdiagram
 
-![](kepek/komp.png)
+![](kepek/nomnoml (1).png)
 
 ######2.1.2. Oldaltérkép:
 
@@ -93,29 +93,43 @@ Vegyünk példának egy egyszerű folyamatot:
 * GET/createCritic: új kritka felvétele
 * POST/addCategory: új kategória felvétele
 * POST/createCritic: új kritka felvételéhez szükséges adatok felküldése
-* GET/vieWCritic/:id: kritika adatok
-* POST/vieWCritic/:id: kritika adatok kilistázása
-* GET/editCritic/:id: kritika módosítása
-* POST/editCritic/:id: kritika módosítása, adatok felküldése
-* GET/deleteCritic/:id kritika törlése
+* GET/vieWCritic/:id : kritika adatok
+* POST/vieWCritic/:id : kritika adatok kilistázása
+* GET/editCritic/:id : kritika módosítása
+* POST/editCritic/:id : kritika módosítása, adatok felküldése
+* GET/deleteCritic/:id : kritika törlése
 
 #####2.2. Felhasználói-felület modell
 
 ######2.2.1.Oldalvázlatok:
+
 **Bejelentkezés/Regisztrálás**
 ![](kepek/site1.PNG)
 
-**Bejelentkezés/Regisztrálás**
+**Regisztrálás**
 ![](kepek/site2.PNG)
 
-**Bejelentkezés/Regisztrálás**
+**Bejelentkezés**
 ![](kepek/site3.PNG)
 
-**Bejelentkezés/Regisztrálás**
+**Főoldal**
 ![](kepek/site4.PNG)
 
-**Bejelentkezés/Regisztrálás**
+**Új Kritika**
 ![](kepek/site5.PNG)
+
+**Kritika lista**
+![](kepek/site6.PNG)
+
+**Kritika megtekintése**
+![](kepek/site7.PNG)
+.
+.
+.
+![](kepek/site8.PNG)
+
+**Kritika szekesztése**
+![](kepek/site9.PNG)
 
 
 
