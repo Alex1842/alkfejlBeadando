@@ -6,6 +6,18 @@ const Validator = use('Validator')
 
 class CriticsController {
 
+
+    *ajaxDelete(request, response) {
+        const id = request.param('id')
+        const critic = yield Critic.find(id)
+        if (!critic) {
+            response.notFound('Hiba történt a feldolgozás során!')
+            return
+        }
+        yield critic.delete()
+        response.ok({success: true});
+    }
+ 
     * create(request, response) {
         console.log('create');
         const categories = yield Category.all()          

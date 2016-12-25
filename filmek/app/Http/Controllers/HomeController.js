@@ -9,12 +9,28 @@ const Validator = use('Validator')
 class HomeController {
     * index(request, response){
         const isLoggedIn = yield request.auth.check()
-        if (!isLoggedIn) {
-            response.redirect('/loginSignUp')
-        }
+       // if (!isLoggedIn) {
+        //    response.redirect('/loginSignUp')
+       // }
         yield response.sendView('main');
     }
-
+    * ajaxLogin (request, response) {
+     const email = request.input('email')
+     const password = request.input('password')
+ 
+     try {
+       const login = yield request.auth.attempt(email, password) 
+ 
+       if (login) {
+         response.ok({ success: true })
+         return
+       }
+     }
+     catch (err) {
+       response.ok({ success: false })
+       return
+     }
+   }
     * notes(request, response){
         const isLoggedIn = yield request.auth.check()
         if (!isLoggedIn) {
