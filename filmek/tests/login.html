@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:3333/" />
-<title>login</title>
+<title>logintest</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">login</td></tr>
+<tr><td rowspan="1" colspan="3">logintest</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
@@ -18,48 +18,43 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.navbar-toggle.collapsed</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=btnLogin</td>
+	<td>//div[@id='critic-navbar-collapse']/ul[2]/li/a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>pause</td>
-	<td>500</td>
+	<td>2000</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=email</td>
-	<td>q@q.hu</td>
+	<td>//input[@id='username']</td>
+	<td>Alkfejl</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=password</td>
-	<td>qqqq</td>
+	<td>//input[@id='password']</td>
+	<td>Alkfejl1!</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
+	<td>//button[@type='Submit']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>pause</td>
-	<td>500</td>
+	<td>2000</td>
 	<td></td>
 </tr>
 <tr>
-	<td>assertElementPresent</td>
-	<td>link=Kilépés</td>
+	<td>clickAndWait</td>
+	<td>//div[@id='critic-navbar-collapse']/ul/li[2]/a</td>
 	<td></td>
-</tr>
-<tr>
-	<td>verifyText</td>
-	<td>css=li.navbar-text</td>
-	<td>Üdv, q!</td>
 </tr>
 
 </tbody></table>

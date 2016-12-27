@@ -29,6 +29,6 @@ Route.get('/vieWCritic/:id', 'CriticsController.view')
 Route.post('viewCritic/:id', 'CriticsController.doView')
 Route.get('/critics', 'CriticsController.search')
 Route.group('ajax', function () {
-   Route.delete('/critics/:id/delete', 'CriticsController.ajaxDelete').middleware('auth')
-   Route.post('/loginSignUp', 'UserController.ajaxLogin')
+   Route.delete('/deleteCritic/:id', 'CriticsController.ajaxDelete').middleware('auth')
+   Route.post('/loginSignUp', 'HomeController.ajaxLogin')
  }).prefix('/ajax')

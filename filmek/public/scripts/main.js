@@ -26,4 +26,4 @@ $headings.on('click', function (e) {
   // console.log(this)
   const $ul = $(this).next()
   $ul.slideToggle()
-})*/
+})

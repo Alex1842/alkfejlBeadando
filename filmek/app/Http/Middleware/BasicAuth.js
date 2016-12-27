@@ -9,6 +9,7 @@ class BasicAuth {
     const credentials = auth(request.request)
 
     if (!credentials) {
+      console.log("credentials: "+credentials);
       response.status(401).send({
         error: 'Please enter your account credentials'
       })
@@ -22,6 +23,7 @@ class BasicAuth {
       .fetch()
 
     if (!user.size()) {
+      console.log("User size: "+user.size());
       response.status(401).send({
         error: 'Please enter your account credentials'
       })

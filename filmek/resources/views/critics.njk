@@ -74,12 +74,14 @@
 							</div>
 							{% if critic.user_id == currentUser.id %}
 							<div style="list-style:none;" align="bottom" >
-								<div align="right"></br>
+								<div align="right">
 									<i style="opacity:.6">
 										This critic is added by you.      
 									</i>
 									<!--<a href="/deleteCritic/{{critic.id}}">-->
 									<a id="btnDelete" class="btn btn-danger" href="/deleteCritic/{{critic.id}}" role="button">Töröl</a>
+ <i class="glyphicon glyphicon-trash" >
+										</i>
  <span class="help-block"></span>
  
  <div class="modal fade confirm-modal" tabindex="-1" role="dialog">
@@ -95,8 +97,7 @@
          </div>
      </div>
  </div>
-										<i class="glyphicon glyphicon-trash" >
-										</i>
+										
 									</a>		
 								</div>
 							</div>	

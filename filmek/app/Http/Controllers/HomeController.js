@@ -15,7 +15,7 @@ class HomeController {
         yield response.sendView('main');
     }
     * ajaxLogin (request, response) {
-     const email = request.input('email')
+     const email = request.input('username')
      const password = request.input('password')
  
      try {

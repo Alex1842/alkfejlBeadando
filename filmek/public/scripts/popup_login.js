@@ -24,6 +24,7 @@ $("a[href='/loginSignUp']").on('click', function (e) {
       $modal.modal('show')
       const $form = $modal.find('form')
       $form.on('submit', function(e) {
+        console.log("ok");
         e.preventDefault()
         const data = $(this).serializeArray()
         Promise.resolve(
@@ -37,10 +38,12 @@ $("a[href='/loginSignUp']").on('click', function (e) {
         )
           .then(json => {
             if (json.success) {
-              $('#navContainer').load('/ #navContainer', function() {
+              $('#navContainer').load('/ ', function() {
+                
                 $modal.modal('hide')
               })
             } else {
+              console.log(json);
               $errorContainer.show().text('Nem megfelelő adatok')
             }
           })

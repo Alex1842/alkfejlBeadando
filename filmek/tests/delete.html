@@ -12,34 +12,24 @@
 <tr><td rowspan="1" colspan="3">delete</td></tr>
 </thead><tbody>
 <tr>
-	<td>click</td>
-	<td>id=btnDelete</td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>500</td>
+	<td>open</td>
+	<td>/critics</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>xpath=(//button[@type='button'])[2]</td>
+	<td>//a[@id='btnDelete']/parent::*/parent::*/parent::*//a[@type='submit']</td>
 	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>name=recipeName</td>
-	<td>www</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>css=button.btn.btn-info</td>
+	<td>//*[@id='wrapper']/div/h1/a/i</td>
 	<td></td>
 </tr>
 <tr>
-	<td>assertText</td>
-	<td>css=h2</td>
-	<td>Találatok (0)</td>
+	<td>clickAndWait</td>
+	<td>//a[contains(text(),'Delete critic')]</td>
+	<td></td>
 </tr>
 
 </tbody></table>
