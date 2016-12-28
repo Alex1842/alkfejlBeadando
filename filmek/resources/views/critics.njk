@@ -2,6 +2,7 @@
 
 {% block scripts %}
  <script src="/scripts/delete.js"></script>
+ <script src="/scripts/main.js"></script>
  {% endblock %}
 
 {% block content%}
@@ -55,6 +56,7 @@
 								<h2>
 									{{ critic.title }}
 								</h2>
+								<div></div>
 							</div>
 						</center>
 						<div class="panel-body" style="max-height:200px; min-height:150px; overflow-y: scroll;">
@@ -78,6 +80,7 @@
 									<i style="opacity:.6">
 										This critic is added by you.      
 									</i>
+									{{ csrfField | safe }}
 									<!--<a href="/deleteCritic/{{critic.id}}">-->
 									<a id="btnDelete" class="btn btn-danger" href="/deleteCritic/{{critic.id}}" role="button">Töröl</a>
  <i class="glyphicon glyphicon-trash" >
@@ -91,7 +94,7 @@
              Biztosan törölni szeretnéd?
          </div>
          <div class="modal-footer">
-             <button type="button" class="btn btn-success modal-ok" data-dismiss="modal">OK</button>
+             <button type="button" class="btn btn-success modal-ok" id="btnDelete" href="/deleteCritic/{{critic.id}}" role="button" data-dismiss="modal">OK</button>
              <button type="button" class="btn btn-danger modal-cancel" data-dismiss="modal">Mégse</button>
          </div>
          </div>

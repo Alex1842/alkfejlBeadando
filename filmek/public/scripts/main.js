@@ -12,12 +12,11 @@
 //   return this.nodeType === Node.TEXT_NODE;
 // }).text().trim()
  console.log( "sun" )
-
-const $panels = $('.panel')
+var count = 1;
+const $panels = $('.panel').find('h2').next('div')
 $panels.each(function () {
-  const $panel = $(this)
-  const db = $panel.find('.list-group-item').length
-  $panel.find('.panel-heading span').before(`(${db})`) 
+  $(this).text("("+count+")");
+  count++; 
 })
 
 $headings = $('.panel-heading')

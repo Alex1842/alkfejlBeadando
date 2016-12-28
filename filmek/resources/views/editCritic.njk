@@ -8,6 +8,14 @@
     width: 1000px;    
 }
 </style>
+{% block scripts %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="/scripts/delete.js"></script>
+ {% endblock %}
 <div id="wrapper">
     <div class="container">
     {% if not currentUser %}
@@ -47,11 +55,29 @@
                         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
                             <button type="submit" class="btn-lg btn-success">Save critic <span class=" glyphicon glyphicon-ok" aria-hidden="true"></span></button>
                             <a href="/deleteCritic/{{critic.id}}" class="btn btn-danger col-lg-offset-6">
-							Delete critic <span class=" glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                        </div>
+							Delete critic <span class=" glyphicon glyphicon-remove" aria-hidden="true">
+                            
+                            </span></a>
+                             
 						
 						
                     </div>
+                      <span class="help-block"></span>
+ 
+ <div class="modal fade confirm-modal" tabindex="-1" role="dialog">
+     <div class="modal-dialog modal-sm" role="document">
+         <div class="modal-content">
+         <div class="modal-body">
+             Biztosan törölni szeretnéd?
+         </div>
+         <div class="modal-footer">
+             <button type="button" class="btn btn-success modal-ok" data-dismiss="modal">OK</button>
+             <button type="button" class="btn btn-danger modal-cancel" data-dismiss="modal">Mégse</button>
+         </div>
+         </div>
+     </div>
+ </div>
+
 					 <div class="form-group">
                         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
                             {% if critic.user_id == currentUser.id %}

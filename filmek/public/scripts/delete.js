@@ -1,27 +1,23 @@
+
+
 function ajaxDelete(url) {
-  const headers = {
-    'csrf-token': $('[name="_csrf"]').val()
-  }
-  return Promise.resolve(
-    $.ajax({
-      beforeSend: function (xhr) {
-         xhr.setRequestHeader('Authorization', function(username, password){ 
-      var token = username + ':' + password;
-      var hash = "";
-      if (btoa) {
-         hash = btoa(token);
-      }
-      return "Basic " + hash;
-   });
-      },
-      url,
-      method: 'DELETE',
-      dataType: 'json',
-      headers
-    })
-  )
-  
-}
+   const headers = {
+     'csrf-token': $('[name="_csrf"]').val()
+   }
+   return Promise.resolve(
+     $.ajax({
+        beforeSend: function (xhr) {
+
+          xhr.setRequestHeader('Authorization', 'Basic ' + btoa(username + ":" + password));
+
+        },
+       url,
+       method: 'DELETE',
+       dataType: 'json',
+       headers
+     })
+   )
+ }
 
 function my_confirm(question) {
   // return Promise.resolve(confirm(question))
@@ -45,23 +41,27 @@ function my_confirm(question) {
   })
 }
 
-$('#btnDelete').on('click', function (e) {
-  console.log("ok");
-  e.preventDefault()
- // console.log(response);
-  my_confirm('Biztos törölni akarod?').then(response => {
-    if (response) {
-      // /ajax/recipes/3/delete
-      const url = 'ajax' + $(this).attr('href')
-      ajaxDelete(url)
-        .then(data => {
-          location.assign('/')
-        })
-        .catch(xhr => {
-          $('.help-block').text(xhr.responseText)
-        })
-    }
+
+  $("a[class*='btn-danger']").on('click', function (e) {
+    console.log("ok");
+    e.preventDefault()
+  // console.log(response);
+    my_confirm('Biztos törölni akarod?').then(response => {
+      if (response) {
+        // /ajax/recipes/3/delete
+        console.log($(this).attr('href'))
+        const url = 'ajax' + $(this).attr('href')
+        ajaxDelete(url)
+          .then(data => {
+            cosole.log(location.assign('/'))
+            location.assign('/')
+          })
+          .catch(xhr => {
+            $('.help-block').text(xhr.responseText)
+          })
+      }
+    })
   })
-})
+
 
 

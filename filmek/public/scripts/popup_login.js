@@ -1,10 +1,27 @@
+
+//$("a[href='/loginSignUp']").ready(function(){
+$(document).on('click', "a[href='/loginSignUp']", function (e) {
+      $("form[action='/register']").hide()
+      if($("div[class='modal-content'] a[name='sup']").length<2){
+        $("button[type='Submit']").parent().append(
+        "<a name='sup' class='btn btn-success' href='/loginSignUp'><i class='glyphicon glyphicon-log-in'  style='padding-right:10px'></i>Sign Up</a>"
+      )}
+
+     // $("div[class='modal-dialog modal-md'] i").hide();
+     // $("div[class='modal-dialog modal-md'] button").prepend("<center>"); 
+     // $("div[class='modal-dialog modal-md'] button").append("</center>"); 
+    })
+
+
 $("a[href='/loginSignUp']").on('click', function (e) {
+
   e.preventDefault()
   
   const $modal = $('#loginModal')
   if ($modal.length>0) {
     $modal.modal('show')
   } else {
+    console.log("zopo")
     const $modal = $(`
       <div class="modal fade confirm-modal" tabindex="-1" role="dialog" id="loginModal">
         <div class="modal-dialog modal-md" role="document">
@@ -64,13 +81,9 @@ $("a[href='/loginSignUp']").on('click', function (e) {
 //setTimeout(function() {
     // Whatever you want to do after the wait
 
-    $(document).on('click', "a[href='/loginSignUp']", function (e) {
-
-
-      console.log("kam")
-     // $("div[class='modal-dialog modal-md'] i").hide();
-     // $("div[class='modal-dialog modal-md'] button").prepend("<center>"); 
-     // $("div[class='modal-dialog modal-md'] button").append("</center>"); 
-    })
+    
+    
   //  }, millisecondsToWait);
 //}
+
+
